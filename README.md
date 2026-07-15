@@ -86,3 +86,12 @@ ORDER BY
 Hallazgo Clave (Automatización):
 A las 5:00 AM y 4:00 AM, la tasa de transacciones fraudulentas se dispara exponencialmente a un 22.3% y 22% respectivamente. Sin embargo, el volumen total de fraudes se mantiene casi constante (un promedio de ~340 ataques por hora). Esto confirma el uso de scripts automatizados (bots) que operan de manera constante las 24 horas del día. El pico de riesgo de la madrugada se debe simplemente a que disminuye la actividad de los usuarios legítimos (humanos), convirtiéndola en la ventana horaria más crítica para el sistema.
 
+---
+
+Basándonos en el análisis de datos, se proponen las siguientes medidas de mitigación para el equipo de seguridad:
+
+1.  *Reglas SIEM Prioritarias (Monitoreo de Madrugada):* Configurar reglas de correlación en el SIEM para alertar de forma inmediata cualquier transacción de tipo TRANSFER que supere el promedio habitual y que ocurra entre las *2:00 AM y las 6:00 AM*.
+2.  *MFA Dinámico Avanzado:* Exigir un doble factor de autenticación (biométrico o token de seguridad físico) obligatorio para cualquier intento de transferencia (TRANSFER) o retiro (CASH_OUT) de montos altos que se realicen en horarios atípicos del titular de la cuenta.
+3.  *Monitoreo Transaccional por Comportamiento:* Bloquear de forma preventiva transacciones consecutivas de TRANSFER seguidas de CASH_OUT en un lapso menor a 10 minutos para mitigar el vaciado de cuentas puente.
+
+---
