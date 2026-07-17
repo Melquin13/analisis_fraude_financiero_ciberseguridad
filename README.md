@@ -12,7 +12,9 @@ En el sector financiero, el fraude no solo representa pérdidas monetarias masiv
 ---
 
 ## 💾 2. Preparar (Prepare)
-*   *Origen de los Datos:* El dataset utilizado es el Synthetic Financial Datasets for Fraud Detection, alojado en Kaggle.
+
+* **Origen de los Datos:** El dataset utilizado es el [Financial Fraud Detection Dataset](https://www.kaggle.com/datasets/sriharshaeedala/financial-fraud-detection-dataset), alojado en la plataforma Kaggle.
+
 *   *Características del Dataset:* Contiene $6.362.620$ de registros de transacciones financieras con variables como tipo de transacción (type), monto (amount), balance de origen/destino y una etiqueta binaria de fraude (isFraud).
 *   *Almacenamiento y Gobernanza:* Siguiendo las mejores prácticas de gobernanza de datos y cumplimiento con el *RGPD (Reglamento General de Protección de Datos), los datos se alojaron en una base de datos externa en **Google BigQuery* bajo la multi-región *EU (Unión Europea)*.
 
