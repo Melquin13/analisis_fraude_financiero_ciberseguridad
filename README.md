@@ -40,6 +40,7 @@ SELECT
   ROUND(AVG(CASE WHEN isFraud = 1 THEN amount ELSE 0 END), 2) AS promedio_por_fraude
 FROM 
   daimielcloud1er.Ciberseguridad_Fraude.transacciones_financieras;
+```
 
 Hallazgo Clave:
 Aunque el fraude solo representa el 0.1291% de las transacciones globales, el monto promedio sustraído por ataque es extremadamente alto: $1.467.967,30. Esto demuestra que los atacantes no realizan pequeños robos de manera masiva, sino ataques quirúrgicos de alto impacto dirigidos a cuentas con fondos elevados.
@@ -62,6 +63,7 @@ GROUP BY
   tipo_transaccion
 ORDER BY 
   dinero_total_fraudulento DESC;
+```
 
 Hallazgo Clave (Vector de Ataque):
 El fraude ocurre exclusivamente en transacciones de tipo TRANSFER y CASH_OUT. Esto revela el Modus Operandi de los ciberdelincuentes: comprometer las cuentas para realizar transferencias inmediatas a cuentas "puente" y, al mismo tiempo, realizar retiros en efectivo (CASH_OUT) para romper el rastreo digital del dinero.
@@ -73,6 +75,7 @@ El fraude ocurre exclusivamente en transacciones de tipo TRANSFER y CASH_OUT. Es
 ### Consulta 3: Patrones Temporales y Detección de Botnets
 Objetivo: Analizar la distribución de los ataques por horas.
 
+```sql
 SELECT 
   MOD(step, 24) AS hora_del_dia,
   COUNT(*) AS total_transacciones,
@@ -84,6 +87,7 @@ GROUP BY
   hora_del_dia
 ORDER BY 
   tasa_de_fraude_por_hora DESC;
+```
 
 Hallazgo Clave (Automatización):
 A las 5:00 AM y 4:00 AM, la tasa de transacciones fraudulentas se dispara exponencialmente a un 22.3% y 22% respectivamente. Sin embargo, el volumen total de fraudes se mantiene casi constante (un promedio de ~340 ataques por hora). Esto confirma el uso de scripts automatizados (bots) que operan de manera constante las 24 horas del día. El pico de riesgo de la madrugada se debe simplemente a que disminuye la actividad de los usuarios legítimos (humanos), convirtiéndola en la ventana horaria más crítica para el sistema.
