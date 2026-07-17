@@ -42,6 +42,8 @@ FROM
   daimielcloud1er.Ciberseguridad_Fraude.transacciones_financieras;
 ```
 
+![Métricas de Control de Riesgo Bancario](Control_riesgo.png)
+
 Hallazgo Clave:
 Aunque el fraude solo representa el 0.1291% de las transacciones globales, el monto promedio sustraído por ataque es extremadamente alto: $1.467.967,30. Esto demuestra que los atacantes no realizan pequeños robos de manera masiva, sino ataques quirúrgicos de alto impacto dirigidos a cuentas con fondos elevados.
 
@@ -98,7 +100,7 @@ A las 5:00 AM y 4:00 AM, la tasa de transacciones fraudulentas se dispara expone
 
 Basándonos en el análisis de datos, se proponen las siguientes medidas de mitigación para el equipo de seguridad:
 
-1.  *Reglas SIEM Prioritarias (Monitoreo de Madrugada):* Configurar reglas de correlación en el SIEM para alertar de forma inmediata cualquier transacción de tipo TRANSFER que supere el promedio habitual y que ocurra entre las *2:00 AM y las 6:00 AM*.
+1.  *Reglas SIEM Prioritarias (Monitoreo de Madrugada):* Configurar reglas de correlación en el SIEM para alertar de forma inmediata cualquier transacción de tipo TRANSFER que supere el promedio habitual y que ocurra entre las *2:00 AM y las 7:00 AM*.
 2.  *MFA Dinámico Avanzado:* Exigir un doble factor de autenticación (biométrico o token de seguridad físico) obligatorio para cualquier intento de transferencia (TRANSFER) o retiro (CASH_OUT) de montos altos que se realicen en horarios atípicos del titular de la cuenta.
 3.  *Monitoreo Transaccional por Comportamiento:* Bloquear de forma preventiva transacciones consecutivas de TRANSFER seguidas de CASH_OUT en un lapso menor a 10 minutos para mitigar el vaciado de cuentas puente.
 
