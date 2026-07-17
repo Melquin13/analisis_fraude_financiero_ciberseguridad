@@ -66,6 +66,8 @@ ORDER BY
 Hallazgo Clave (Vector de Ataque):
 El fraude ocurre exclusivamente en transacciones de tipo TRANSFER y CASH_OUT. Esto revela el Modus Operandi de los ciberdelincuentes: comprometer las cuentas para realizar transferencias inmediatas a cuentas "puente" y, al mismo tiempo, realizar retiros en efectivo (CASH_OUT) para romper el rastreo digital del dinero.
 
+![Gráfico de Barras](Perdidas_por_transaccion.png)
+
 ---
 
 ### Consulta 3: Patrones Temporales y Detección de Botnets
